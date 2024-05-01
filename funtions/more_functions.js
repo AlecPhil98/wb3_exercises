@@ -37,8 +37,10 @@ changeDue = totalDue - amountPaid
 console.log("Total Due: " + totalDue)
 console.log("Amount paid: " + amountPaid)
 console.log("Change Due: " + "$" + Math.abs(changeDue))
+
 console.log("The amount due was $" + totalDue + " so then we paid $" + amountPaid + " plus a $" + Math.abs(changeDue) + " tip" )
 }
+
 displayRecipt(30,35)
 
 
