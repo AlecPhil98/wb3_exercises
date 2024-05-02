@@ -26,9 +26,8 @@ console.log(getMedicareTax(550).toFixed(2))
 //Get federal tax 
 
 function getFederalTax(grossPay, withholdingCode) {
-    let taxRate = 0;
-    let federalTaxWithholding = grossPay * taxRate;
 
+    let taxRate = 0;
     if (withholdingCode === 0) {
         taxRate = 23 / 100;
     }
@@ -43,13 +42,20 @@ function getFederalTax(grossPay, withholdingCode) {
         taxRate = 18.5 / 100;
     }
     else if (withholdingCode >= 4) {
-        taxRate = .18 /100 - ((withholdingCode - 4) * .005);
+        taxRate = .18 / 100 - ((withholdingCode - 4) * .005);
+
     }
 
-
+    let federalTaxWithholding = grossPay * taxRate;
     return federalTaxWithholding
 }
-console.log(getFederalTax(750, 0))
-console.log(getFederalTax(1550, 2))
-//console.log (getFederalTax(1100,6))
+let grossPay = 72963.59
+let withholdingCode = 0;
+
+//console.log(getFederalTax(750, 0))
+//console.log(getFederalTax(1550, 2))
+//console.log(getFederalTax(1100, 6))
+
+
+console.log("Federal Tax on $" + grossPay + " gross pay with a code of " + withholdingCode + ": $" + getFederalTax(grossPay, withholdingCode).toFixed(2));
 
